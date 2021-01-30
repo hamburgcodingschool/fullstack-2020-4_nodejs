@@ -28,7 +28,7 @@ app.get('/emails/:id', function(req, res) {
 
     const query = `SELECT * FROM subscribers WHERE id = ?`
 
-    pool.query(query, [id], function(err, result) {
+    pool.query(query, id, function(err, result) {
         if (err) {
             res.json({
                 status: "NOT OK",

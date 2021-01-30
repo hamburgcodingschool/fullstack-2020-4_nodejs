@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>yo</h1>
+
+    <form action="https://www.youtube.com/watch">
+        <input type="text" name="v" placeholder="Code goes here">
+        <button type="submit">Click me to watch the video!</button>    
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="name" placeholder="name" id="inputName">
+        <input type="text" name="email" placeholder="email" id="inputEmail">
+        <button type="submit" id="clickMeButton">Click me!</button>    
+    </form>
+
+
+    <script>
+        const inputName = document.getElementById('inputName');
+        const inputEmail = document.getElementById('inputEmail');
+        const clickMeButton = document.getElementById('clickMeButton');
+
+        clickMeButton.addEventListener('click', function(event) {
+            event.preventDefault()
+
+            const bodyData = {
+                name: inputName.value,
+                email: inputEmail.value,
+            }
+
+            fetch('http://localhost:3000/postTest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodyData)
+            }).then(function(response) {
+                response.text().then(function(result) {
+                    console.log(result)
+                })
+            })
+
+        });
+
+    </script>
+</body>
+</html>
