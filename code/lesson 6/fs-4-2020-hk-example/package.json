@@ -1,0 +1,28 @@
+{
+  "name": "fs-4-2020-hk-example",
+  "version": "1.0.0",
+  "description": "Example for hosting on Heroku.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phelder/fs-4-2020-hk-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phelder/fs-4-2020-hk-example/issues"
+  },
+  "homepage": "https://github.com/phelder/fs-4-2020-hk-example#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mysql2": "^2.2.5"
+  }
+}
